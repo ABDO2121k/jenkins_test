@@ -16,22 +16,26 @@ public class register {
         // Ce commentaire est ajouté pour simuler un conflit de merge
 
     // Constructeur avec paramètres
-    public register(String username, String password, String email) {
+    public register(String username, String password, 
+        String email) {
         this.username = username;
         this.password = password;
+
+
+
         this.email = email;
     }
 
-
+     public void setUsername(String username) {
+        this.username = username;
+    }
             // Ce commentaire est ajouté pour simuler un conflit de merge
     // Méthodes getters et setters
     public String getUsername() {
         return username;
     }
     
-    public void setUsername(String username) {
-        this.username = username;
-    }
+ 
     
     public String getPassword() {
         return password;
