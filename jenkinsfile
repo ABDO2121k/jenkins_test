@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo "Checking out branch: ${params.branch}"
                 
-                git branch: params.branch
+                git branch: params.branch, url: 'https://github.com/ABDO2121k/jenkins_test'
             }
         }
 
