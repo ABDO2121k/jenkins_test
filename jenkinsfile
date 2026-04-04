@@ -1,20 +1,34 @@
-// simple pipeline example 
 pipeline {
     agent any
+
+    parameters {
+        string(name: 'branch', defaultValue: 'main', description: 'Branch to build')
+    }
+
     stages {
+        stage('Checkout') {
+            steps {
+                echo "Checking out branch: ${params.branch}"
+                
+                git branch: params.branch
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo "Building branch: ${params.branch}..."
             }
         }
+
         stage('Test') {
             steps {
-                echo 'Testing... aaaaaa'
+                echo "Testing branch: ${params.branch}..."
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                echo "Deploying branch: ${params.branch}..."
             }
         }
     }
